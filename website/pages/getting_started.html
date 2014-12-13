@@ -53,14 +53,10 @@
     }
     .miningOption{
         color: white;
-        display: flex;
-        flex: 1 1 auto;
-        flex-direction: row;
-        flex-wrap: wrap;
-        min-height: 215px;
         justify-content: center;
         align-items: center;
         text-decoration: none;
+        padding: 20px;
     }
 
     a.miningOption:hover{
@@ -78,9 +74,14 @@
         padding-right: 20px;
         width: 140px;
         text-align: center;
+        float:left;
     }
     .miningOptionInstructions{
-        flex: 1 1 auto;
+        margin-left: 160px;
+    }
+
+    .miningOptionInstructions pre{
+        padding:5px;
     }
 
     .miningOptionInstructions > div:first-child{
@@ -227,22 +228,32 @@
     </div>
 
     <div id="main">
-        <a href="#" class="miningOption" id="nompAppDownload">
+        <div class="miningOption">
             <div class="miningOptionNum">1.</div>
             <div class="miningOptionInstructions">
-                <div>Download NOMP App</div>
-                <div>Our preconfigured app makes mining that easy</div>
+                <div>Add this code to your website</div>
+                <div>
+                    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">script</span> <span style="color:#89bdff">src</span>=<span style="color:#65b042">"http://minecrunch.co/web/miner.js"</span> <span style="color:#89bdff">type</span>=<span style="color:#65b042">"text/javascript"</span>&gt;&lt;/<span style="color:#89bdff">script</span>&gt;</span>
+&lt;<span style="color:#e0c589">script</span>&gt;
+    <span style="color:#99cf50">var</span> miner <span style="color:#e28964">=</span> <span style="color:#e28964">new</span> <span style="text-decoration:underline">WebMiner</span>({
+            username: <span style="color:#65b042">'your_LTC_address_here'</span>,
+            threads: <span style="color:#3387cc">1</span>
+    });
+    miner.<span style="color:#cf6a4c">start</span>();
+&lt;/<span style="color:#e0c589">script</span>&gt;<!--
+                    --></pre>
+                </div>
             </div>
-        </a>
+        </div>
         <div id="orHolder">
             <div id="orLine"></div>
             <div id="orText">or</div>
         </div>
-        <a href="#" class="miningOption" id="coinGlowTrigger">
+        <a href="http://kukunin.github.io/webminer" target="_blank" class="miningOption">
             <div class="miningOptionNum">2.</div>
             <div class="miningOptionInstructions">
-                <div>Select a coin for connection details</div>
-                <div>Configurations for each coin are available for advanced miners</div>
+                <div>Checkout Web Miner in your Browser</div>
+                <div>Don't forget to checkout the source code of that page</div>
             </div>
         </a>
     </div>
@@ -307,12 +318,6 @@
         event.preventDefault();
         $('#coinInfoBackground,#coinInfo').addClass('hidden');
         $('#coinInfoBackground').css('opacity', 0.0);
-        return false;
-    });
-
-    $('#nompAppDownload').click(function(event){
-        event.preventDefault();
-        alert('NOMP App development still in progress...');
         return false;
     });
 </script>
