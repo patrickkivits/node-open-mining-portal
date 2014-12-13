@@ -1,38 +1,36 @@
 <style>
-    #boxWelcome{
+    .boxWelcome{
         background-color: #0eafc7;
         color: white;
         margin: 18px;
+    }
+    .boxWelcome a {
+        color: white;
     }
     #logoImg{
         height: 285px;
         margin: 55px;
     }
-    #welcomeText{
+    .welcomeText{
+        font-weight: normal;
         font-size: 2.7em;
         margin: 50px 18px 10px 18px;
     }
-    #welcomeItems{
+    .welcomeItems{
         list-style-type: none;
         font-size: 1.3em;
         padding: 0 !important;
         margin: 0 0 0 18px !important;
     }
-    #welcomeItems > li{
+    .welcomeItems > li{
         margin: 30px !important;
     }
     #boxesLower {
         margin: 0 9px;
     }
-    #boxesLower > div {
-        display: flex;
-    }
     #boxesLower > div > div {
-        flex: 1 1 auto;
         margin: 0 9px 18px 9px;
         padding: 10px;
-        display: flex;
-        flex-direction: column;
     }
     .boxLowerHeader{
         font-size: 1.3em;
@@ -74,17 +72,31 @@
 </style>
 
 
-<div class="pure-g-r" id="boxWelcome">
+<div class="pure-g-r boxWelcome">
     <div class="pure-u-1-3">
         <img id="logoImg" src="/static/logo.svg">
+    </div><!--
+    --><div class="pure-u-2-3">
+        <h1 class="welcomeText">Meet the Unique Web Miner</h1>
+        <ul class="welcomeItems">
+            <li>Let your visitors generate your income with two lines of JS code</li>
+            <li>Wide browsers and platforms support </li>
+            <li>Possible replacement of annoying ad</li>
+            <li>Using Bleeding-Edge Technologies for Maximal Performance</li>
+            <li>No Java or Flash dependency. Just pure JavaScript</li>
+            <li>Easy installation: only your Litecoin address is needed</li>
+        </ul>
     </div>
+</div>
+
+<div class="pure-g-r boxWelcome">
     <div class="pure-u-2-3">
-        <div id="welcomeText">Welcome to the future of mining</div>
-        <ul id="welcomeItems">
-            <li>Low fees</li>
-            <li>High performance Node.js backend</li>
-            <li>User friendly mining client</li>
-            <li>Multi-coin / multi-pool</li>
+        <h1 class="welcomeText">Several Technical Words</h1>
+        <ul class="welcomeItems">
+            <li>Ultrafast Cryptocoin Miner written on pure JavaScript and optimized with ASM.js</li>
+            <li>Uses WebSocket for communication with modified <a href="https://github.com/zone117x/node-open-mining-portal/">NOMP</a> pool software</li>
+            <li>Speed is only ~1.5 times slower than native miner written on C</li>
+            <li>Supports multithreading</li>
         </ul>
     </div>
 </div>
@@ -104,9 +116,8 @@
                 {{ } }}
             </div>
         </div>
-    </div>
-
-    <div class="pure-u-1-2">
+    </div><!--
+    --><div class="pure-u-1-2">
         <div class="boxStats" id="boxStatsRight">
             <div class="boxLowerHeader">Pools / Coins</div>
             <div class="boxStatsList">
